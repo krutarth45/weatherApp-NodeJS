@@ -6,6 +6,7 @@ const weatherReport = require("./utils/weatherReport");
 
 // creates new express application.
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Paths for Express configs.
 const publicDirectory = path.join(__dirname, "../public");
@@ -98,6 +99,6 @@ app.get("*", (req, res) => {
 });
 
 // listen method starts up the server.
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(port, () => {
+  console.log("Server is running on port " + port);
 });

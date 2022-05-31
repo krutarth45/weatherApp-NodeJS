@@ -5,13 +5,12 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const address = searchEl.value;
   msg1.innerHTML = "Loading...";
-  fetch("http://localhost:3000/weather?address=" + address).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          msg1.innerHTML = `<p>Error<br><br>${data.error}</p>`;
-        } else {
-          msg1.innerHTML = `<p>
+  fetch("/weather?address=" + address).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        msg1.innerHTML = `<p>Error<br><br>${data.error}</p>`;
+      } else {
+        msg1.innerHTML = `<p>
                 Location: ${data.location} <br>
                 Latitude: ${data.latitude} <br>
                 Longitude: ${data.longitude} <br>
@@ -19,8 +18,7 @@ weatherForm.addEventListener("submit", (e) => {
                 Feels Like: ${data.feels_like} <br>
                 Weather: ${data.weather}
             </p>`;
-        }
-      });
-    }
-  );
+      }
+    });
+  });
 });
