@@ -3,9 +3,9 @@ const searchEl = document.querySelector("input");
 const msg1 = document.querySelector("#message-1");
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const location = searchEl.value;
+  const address = searchEl.value;
   msg1.innerHTML = "Loading...";
-  fetch("http://localhost:3000/weather?address=" + location).then(
+  fetch("http://localhost:3000/weather?address=" + address).then(
     (response) => {
       response.json().then((data) => {
         if (data.error) {
