@@ -15,6 +15,7 @@ const weatherReport = (coordinates, callback) => {
         temperature: response.body.current.temperature,
         feelsLikeTemperature: response.body.current.feelslike,
         weather: response.body.current.weather_descriptions[0],
+        humidity: response.body.current.humidity,
       });
     }
   });

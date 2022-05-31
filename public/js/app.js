@@ -16,6 +16,7 @@ weatherForm.addEventListener("submit", (e) => {
                 Longitude: ${data.longitude} <br>
                 Temperature: ${data.temperature} <br>
                 Feels Like: ${data.feels_like} <br>
+                Humidity: ${data.humidity} <br>
                 Weather: ${data.weather}
             </p>`;
       }
